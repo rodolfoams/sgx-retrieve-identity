@@ -4,10 +4,7 @@ jobs:
     docker:
       - image: sebvaucher/sgx-base:sgx_2.5
 
-    working_directory: ~/my-app1/
-
-    environment:
-      CIRCLE_WORKING_DIRECTORY: ~/my-app2/
+    working_directory: ~/build/
 
     steps:
       - checkout
