@@ -6,6 +6,9 @@ jobs:
 
     working_directory: ~/my-app
 
+    environment:
+      CIRCLE_WORKING_DIRECTORY=~/my-app
+
     steps:
       - checkout
 
