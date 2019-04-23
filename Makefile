@@ -251,10 +251,10 @@ $(Signed_Enclave_Name): $(Enclave_Name)
 	@echo "SIGN =>  $@"
 
 mrenclave: $(Signed_Enclave_Name)
-	@$(SGX_ENCLAVE_SIGNER) dump -enclave $(Signed_Enclave_Name) -dumpfile df.out && ./extract-mr-enclave < df.out && rm df.out
+	@$(SGX_ENCLAVE_SIGNER) dump -enclave $(Signed_Enclave_Name) -dumpfile df.out && ./extract-identity < df.out && rm df.out
 
 mrsigner: $(Signed_Enclave_Name)
-	@$(SGX_ENCLAVE_SIGNER) dump -enclave $(Signed_Enclave_Name) -dumpfile df.out && ./extract-mr-enclave --mrsigner < df.out && rm df.out
+	@$(SGX_ENCLAVE_SIGNER) dump -enclave $(Signed_Enclave_Name) -dumpfile df.out && ./extract-identity --mrsigner < df.out && rm df.out
 
 identity: mrenclave mrsigner
 .PHONY: clean
