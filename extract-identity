@@ -14,7 +14,7 @@ if __name__ == "__main__":
     if args.mrsigner:
         searched_header = "mrsigner->value"
         output_header = "MRSIGNER"
-    while  not in line:
+    while searched_header not in line:
         line = input()
     value = list()
     line = input()
