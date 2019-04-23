@@ -1,0 +1,15 @@
+version: 2
+jobs:
+  run:
+    docker:
+      - image: sebvaucher/sgx-base:sgx_2.5
+    steps:
+      - checkout
+      - run: cp -r /opt/intel/sgxsdk/SampleCode/SampleEnclave .
+      - run: cp Makefile SampleEnclave/
+      - run: make mrenclave
+workflows:
+  version: 2
+  run:
+    jobs:
+      - run
