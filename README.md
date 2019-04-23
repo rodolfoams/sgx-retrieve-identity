@@ -1,6 +1,6 @@
-# sgx-retrieve-mrenclave
+# sgx-retrieve-enclave-identity
 
-Tool for retrieving a MRENCLAVE from a signed SGX enclave.
+Tool for retrieving the identities from a signed SGX enclave.
 
 ## Dependencies
 

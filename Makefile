@@ -253,6 +253,10 @@ $(Signed_Enclave_Name): $(Enclave_Name)
 mrenclave: $(Signed_Enclave_Name)
 	@$(SGX_ENCLAVE_SIGNER) dump -enclave $(Signed_Enclave_Name) -dumpfile df.out && ./extract-mr-enclave < df.out && rm df.out
 
+mrsigner: $(Signed_Enclave_Name)
+	@$(SGX_ENCLAVE_SIGNER) dump -enclave $(Signed_Enclave_Name) -dumpfile df.out && ./extract-mr-enclave --mrsigner < df.out && rm df.out
+
+identity: mrenclave mrsigner
 .PHONY: clean
 
 clean:

@@ -20,9 +20,9 @@ jobs:
       - run:
           name: copy makefile
           command: |
-            cp Makefile extract-mr-enclave SampleEnclave/
+            cp Makefile extract-identity SampleEnclave/
 
       - run:
           name: build
           command: |
-            cd SampleEnclave && make mrenclave
+            cd SampleEnclave && make identity
