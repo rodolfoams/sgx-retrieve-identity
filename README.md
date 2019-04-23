@@ -1,5 +1,7 @@
 # sgx-retrieve-enclave-identity
 
+[![CircleCI](https://circleci.com/gh/rodolfoams/sgx-retrieve-identity/tree/master.svg?style=svg)](https://circleci.com/gh/rodolfoams/sgx-retrieve-identity/tree/master)
+
 Tool for retrieving the identities from a signed SGX enclave.
 
 ## Dependencies
