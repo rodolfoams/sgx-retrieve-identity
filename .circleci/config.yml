@@ -8,11 +8,18 @@ jobs:
 
     steps:
       - checkout
-      - run: cp -r /opt/intel/sgxsdk/SampleCode/SampleEnclave .
-      - run: cp Makefile SampleEnclave/
-      - run: cd SampleEnclave && make mrenclave
-workflows:
-  version: 2
-  run:
-    jobs:
-      - build
+
+      - run:
+          name: copy sample
+          command: |
+            cp -r /opt/intel/sgxsdk/SampleCode/SampleEnclave .
+
+      - run:
+          name: copy makefile
+          command: |
+            cp Makefile SampleEnclave/
+
+      - run:
+          name: build
+          command: |
+            cd SampleEnclave && make mrenclave
