@@ -1,8 +1,11 @@
 version: 2
 jobs:
-  run:
+  build:
     docker:
       - image: sebvaucher/sgx-base:sgx_2.5
+
+    working_directory: ~/
+
     steps:
       - checkout
       - run: cp -r /opt/intel/sgxsdk/SampleCode/SampleEnclave .
@@ -12,4 +15,4 @@ workflows:
   version: 2
   run:
     jobs:
-      - run
+      - build
