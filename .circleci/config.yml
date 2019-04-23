@@ -4,10 +4,10 @@ jobs:
     docker:
       - image: sebvaucher/sgx-base:sgx_2.5
 
-    working_directory: ~/my-app
+    working_directory: ~/my-app/
 
     environment:
-      CIRCLE_WORKING_DIRECTORY: ~/my-app
+      CIRCLE_WORKING_DIRECTORY: ~/my-app/
 
     steps:
       - checkout
@@ -20,7 +20,7 @@ jobs:
       - run:
           name: copy makefile
           command: |
-            cp Makefile SampleEnclave/
+            cp Makefile extract-mr-enclave SampleEnclave/
 
       - run:
           name: build
